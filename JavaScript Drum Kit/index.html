@@ -2,54 +2,82 @@
     <head>
         <meta charset="UTF-8">
         <title>JS Drum Kit</title>
-        <link rel="stylessheet" href="styles.css">
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-
+        <div class="container">
         <div class="keys">
             <div data-key="65" class="key">
-                <kbd>A</kbd>
+                <kbd>A</kbd></br>
                 <span class="sound">soundA</span>
             </div>
             <div data-key="83" class="key">
-                <kbd>S</kbd>
+                <kbd>S</kbd></br>
                 <span class="sound">soundS</span>
             </div>
             <div data-key="68" class="key">
-                <kbd>D</kbd>
+                <kbd>D</kbd></br>
                 <span class="sound">soundD</span>
             </div>
             <div data-key="70" class="key">
-                <kbd>F</kbd>
+                <kbd>F</kbd></br>
                 <span class="sound">soundF</span>
             </div>
             <div data-key="71" class="key">
-                <kbd>G</kbd>
+                <kbd>G</kbd></br>
                 <span class="sound">soundG</span>
             </div>
             <div data-key="72" class="key">
-                <kbd>H</kbd>
+                <kbd>H</kbd></br>
                 <span class="sound">soundH</span>
             </div>
             <div data-key="74" class="key">
-                <kbd>J</kbd>
+                <kbd>J</kbd></br>
                 <span class="sound">soundJ</span>
             </div>
             <div data-key="75" class="key">
-                <kbd>K</kbd>
+                <kbd>K</kbd></br>
                 <span class="sound">soundK</span>
             </div>         
             <div data-key="76" class="key">
-                <kbd>L</kbd>
+                <kbd>L</kbd></br>
                 <span class="sound">soundL</span>
             </div>        
         </div>
+    </div>
+        <audio data-key="65" src="sounds/Bass-Drum-3.wav"></audio>
+        <audio data-key="83" src="sounds/Bass-Drum-1.wav"></audio>
+        <audio data-key="68" src="sounds/Bass-Drum-2.wav"></audio>
+        <audio data-key="70" src="sounds/Bottle.wav"></audio>
+        <audio data-key="71" src="sounds/Cross-Sticks.wav"></audio>
+        <audio data-key="72" src="sounds/Electronic-Tom-1.wav"></audio>
+        <audio data-key="74" src="sounds/Electronic-Tom-2.wav"></audio>
+        <audio data-key="75" src="sounds/Electronic-Tom-3.wav"></audio>
+        <audio data-key="76" src="sounds/Electronic-Tom-4.wav"></audio>
 
 
-        <audio data-key="65" src="rutasoundA"></audio>
-        <audio data-key="83" src="rutasoundS"></audio>
-        <audio data-key="68" src="rutasoundD"></audio>
-        <audio data-key="70" src="rutasoundF"></audio>
-        <audio data-key="71" src="rutasoundG"></audio>
+        <script>
+            
+            function playSound(e){
+                const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+                const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+                audio.currentTime=0;
+                audio.play();
+                if(!audio) return;
+                console.log(key);
+                key.classList.add('playing');
+            }
+
+            function removeTransition(e){
+                if(e.propertyName !== 'transform') return;
+                this.classList.remove('playing');
+            }
+
+            const keys = document.querySelectorAll('.key');
+            keys.forEach(key => key.addEventListener('transitionend',removeTransition));
+            window.addEventListener('keydown', playSound);
+
+            
+        </script>
     </body>
 </html>

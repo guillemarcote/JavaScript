@@ -1,0 +1,58 @@
+body {
+    background-image: url("https://elsoldesanjuan.com.ar/wp-content/uploads/2019/02/pearl-ex6pchrtg-91-bateria-6-piezas-serie-export.jpg"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.keys {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+}
+.key {
+    border: 4px solid rgb(255, 0, 0);
+    border-radius: 5px;
+    color:white;
+    padding: 16px 35px;
+    transition:all .17s;
+    text-align: center;
+    margin: 0 15px 0 0;
+    background: rgba(0,0,0,0.6);
+    text-shadow: 0 0 5px black;
+}
+
+.key:first-of-type {
+    margin-left: 15px;
+}
+
+.playing{
+    transform: scale(1.1);
+    border-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px;
+}
+
+.transform{
+    transition:all(.07s);   
+    padding: 1rem .5rem;
+}
+
+.transitionend{
+    border: 2px;
+    transform: .09s;
+}
+
+body{
+    margin:0px;
+}
+
+.container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: .8;
+    display: flex;
+    align-items: center;
+    background-color: rgba(29,29,29,.5);
+}
