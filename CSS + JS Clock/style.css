@@ -1,0 +1,94 @@
+html{
+    background: url("http://4.bp.blogspot.com/-_xcBj46MFZQ/UND-z0V9zwI/AAAAAAAAMZg/yMqV1AhMMpc/s1600/DSC_2898.jpg");
+    background-size: cover;
+    
+    font-family: 'helvetica neue';
+    font-size: 10px;
+    text-align: center;
+}
+
+body{
+    font-size: 2rem;
+    display: flex;
+    flex: 1;
+    min-height: 100vh;
+    align-items: center;
+    background: rgba(0,0,0,0.3);
+    margin: auto;
+}
+
+
+.clock{
+    width: 30rem;
+    height: 30rem;
+    border: 20px solid white;
+    border-radius: 50%;
+    margin: 50px auto;
+    position: relative;
+    padding: 2rem;
+    box-shadow: 
+    0 0 0px 5px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 3px #efefef,
+    inset 0 0 10px black,
+    0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.clock-face{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-3px);
+}
+
+.hand{
+    width: 50%;
+    height: 6px;
+    background: black;
+    position: absolute;
+    top:50%;
+    border-radius: 50px;
+    transform-origin: 99%;
+    transform: rotate(90deg);
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0.1 , 2.7 , 0.58 , 1);
+}
+#hours{
+    width: 35%;
+    transform-origin: 99%;
+    bottom:22%;
+    left: 14.9%;
+}
+
+#seconds{
+    height: 2px;
+}
+
+
+
+.three{
+    display: flex;
+    position: relative;
+    left: 106.5%;
+    top: 47%;
+}
+
+.six{
+    display: flex;
+    position: relative;
+    top:99%;
+    left: 46%;
+}
+
+.nine{
+    display: flex;
+    position: relative;
+    top: 31%;
+    right: 13%; 
+}
+
+.twelve{
+    display: flex;
+    position: relative;
+    bottom: 35%;
+    left: 45%;
+}
